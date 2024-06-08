@@ -1,0 +1,228 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    color:#fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover{
+    opacity: 0.7;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: darkslategrey;
+    height: 8vh;
+}
+main{
+   
+    background:url("sla.jpg")no-repeat
+    center center;
+    background-size: cover;
+    height: 92vh;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu{
+    display: none;
+    cursor:pointer;
+
+}
+.mobile-menu div{
+    width:32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+}
+
+@media (max-width: 999px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-list{
+        position: absolute;
+        top:8vh;
+        right: 0;
+        width:50vw;
+        height: 92vh;
+        background: darkslategrey;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li{
+        margin-left: 0;
+        opacity: 0;
+
+    }
+    .mobile-menu{
+        display: block;
+
+    } 
+}
+.nav-list.active {
+    transform:translateX(0);
+}
+
+@keyframes navLinkFade{
+    from{
+opacity: 0;
+transform: translateX(50px);
+    }
+    to{
+opacity: 1;
+transform: translateX(0);
+    }
+}
+
+.container{
+    margin-left:40vh;
+    display: flex;
+}
+.user-info {
+    width:200px;
+    height:200px;
+    position: relative;
+    top:200px;
+   margin-left:32px ;
+    width:fit-content;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 100%; /* Arredonda as bordas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra */
+    transition: transform 0.3s ease;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente para o overlay */
+    animation: fadeIn ease 0.6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.popup-content {
+    background-color: rgba(255, 255, 255, 0.872); /* Fundo branco semitransparente para o popup */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 30px; /* Borda arredondada */
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra para o popup */
+}
+
+
+
+.close {
+    color: #000000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(172, 14, 14);
+    text-decoration: none;
+    cursor: pointer;
+}
+    
+
+
+.user-info:hover {
+    transform: translateY(-5px); /* Eleva ligeiramente a caixa ao passar o mouse */
+}
+
+.user-info img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%; /* Arredonda o canto superior direito */
+}
+
+.user-info .user-details {
+    padding: 20px;
+
+}
+
+.user-info .user-details h3 {
+    margin-top: 0;
+}
+
+.user-info .user-details p {
+    margin-bottom: 0;
+}
+a:hover {
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+
+
+#close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+  
+ 

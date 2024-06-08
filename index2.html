@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha biológica</title>
+    <link rel="stylesheet" href="style2.css">
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="#" onclick="showCards()">Ficha biológica</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+               <!--TIREI O HREF="/" POIS ESTAVA CHAMANDO UM CAMINHO ALEATORIO DO DISCO C--> 
+                <li><a onclick="showUserInfo('Alex','Quadrado', 'Ausente','ausente','destro','colada','presente','reto','esquerdo','esquerdo','claro','liso','claro','aquilino','ausente','presente','A-')">Alex</a></li>
+                <li><a onclick="showUserInfo('Lucas','Quadrado', 'Ausente','ausente','destro','descolada','ausente','reto','esquerdo','esquerdo','escuro','enrolado','escuro','aquilino','ausente','ausente','O+')">Lucas</a></li>
+                <li><a onclick="showUserInfo('Isaque','Quadrado', 'Ausente','ausente','destro','descolada','presente','reto','direito','direito','escuro','enrolado','escuro','aquilino','ausente','presente','O+')">Isaque</a></li>
+                <li><a onclick="showUserInfo('Roger','Oval', 'Ausente','ausente','destro','descolada','presente','caroneiro','direito','direito','escuro','enrolado','escuro','aquilino','ausente','ausente','B+')">Roger</a></li>
+                <li><a onclick="showUserInfo('JP','Oval', 'Ausente','ausente','destro','descolada','ausente','caroneiro','direito','direito','escuro','liso','escuro','empinado','ausente','ausente','A+')">JP</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+        <div class="user-info" id="card1" style="display:none;"  onclick="showUserInfo('Alex','Quadrado', 'Ausente','ausente','destro','colada','presente','reto','esquerdo','esquerdo','claro','liso','claro','aquilino','ausente','presente','A-')">
+            <img src="alex.jpg" alt="alex">
+            
+        </div>
+        <div class="user-info" id="card2" style="display:none;" onclick="showUserInfo('Lucas','Quadrado', 'Ausente','ausente','destro','descolada','ausente','reto','esquerdo','esquerdo','escuro','enrolado','escuro','aquilino','ausente','ausente','O+')">
+            <img src="lucas.jpg" alt="lucas">
+           
+        </div>
+        <div class="user-info" id="card3" style="display:none;" onclick="showUserInfo('Isaque','Quadrado', 'Ausente','ausente','destro','descolada','presente','reto','direito','direito','escuro','enrolado','escuro','aquilino','ausente','presente','O+')">
+            <img src="isaque.jpg" alt="isaque">
+           
+        </div>
+        <div class="user-info" id="card4" style="display:none;" onclick="showUserInfo('Roger','Oval', 'Ausente','ausente','destro','descolada','presente','caroneiro','direito','direito','escuro','enrolado','escuro','aquilino','ausente','ausente','B+')">
+            <img src="roger.jpg" alt="roger">
+           
+        </div>
+        <div class="user-info" id="card5" style="display:none;" onclick="showUserInfo('JP','Oval', 'Ausente','ausente','destro','descolada','ausente','caroneiro','direito','direito','escuro','liso','escuro','empinado','ausente','ausente','A+')">
+            <img src="jp.jpg" alt="jp">
+           
+        </div>
+
+        <!-- <div id="overlay" onclick="hideUserInfo()"></div>
+        <div id="user-details">
+            <span id="close" onclick="hideUserInfo()">&times;</span>
+            <h2 id="user-name"></h2>
+            <p id="user-rosto"></p>
+            <p id="user-polidactilia"></p>
+            <p id="user-sardas"></p>
+            <p id="user-lateralidade"></p>
+            <p id="user-orelha"></p>
+            <p id="user-lingua"></p>
+            <p id="user-polegar"></p>
+            <p id="user-maos"></p>
+            <p id="user-bracos"></p>
+            <p id="user-cabelo"></p>
+            <p id="user-textura"></p>
+            <p id="user-olhos"></p>
+            <p id="user-nariz"></p>
+            <p id="user-queixo"></p>
+            <p id="user-covinha"></p>
+            <p id="user-sangue"></p>
+            <img id="user-image" src="" alt="">
+        </div>
+    
+</div> -->
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeDialog()">&times;</span>
+        <p id="user-name" style="font-size: 38px;"></p>
+        <p id="user-rosto"></p>
+            <p id="user-polidactilia"></p>
+            <p id="user-sardas"></p>
+            <p id="user-lateralidade"></p>
+            <p id="user-orelha"></p>
+            <p id="user-lingua"></p>
+            <p id="user-polegar"></p>
+            <p id="user-maos"></p>
+            <p id="user-bracos"></p>
+            <p id="user-cabelo"></p>
+            <p id="user-textura"></p>
+            <p id="user-olhos"></p>
+            <p id="user-nariz"></p>
+            <p id="user-queixo"></p>
+            <p id="user-covinha"></p>
+            <p id="user-sangue"></p>
+            <img id="user-image" src="" alt="">
+    </div>
+</div>
+    
+    </main>
+   
+    <script>
+        function showUserInfo(name, rosto, polidactilia,sardas,lateralidade,orelha,lingua,polegar,maos,bracos,cabelo,textura,olhos,nariz,queixo,covinha,sangue) {
+    document.getElementById("user-name").textContent  = name;
+    document.getElementById("user-rosto").textContent = "Rosto: " + rosto;
+    document.getElementById("user-polidactilia").textContent = "Polidactilia: " + polidactilia;
+    document.getElementById("user-sardas").textContent = "Presença de sardas: " + sardas;
+    document.getElementById("user-lateralidade").textContent = "lateralidade: " + lateralidade;
+    document.getElementById("user-orelha").textContent = "orelha: " + orelha;
+    document.getElementById("user-lingua").textContent = "Enrolar a lingua: " + lingua;
+    document.getElementById("user-polegar").textContent = "Polegar: " + polegar;
+    document.getElementById("user-maos").textContent = "Cruzar as mãos: " + maos;
+    document.getElementById("user-bracos").textContent = "Cruzar os braços: " + bracos;
+    document.getElementById("user-cabelo").textContent = "Cor do cabelo: " + cabelo;
+    document.getElementById("user-textura").textContent = "Textura: " + textura;
+    document.getElementById("user-olhos").textContent = "Olhos: " + olhos;
+    document.getElementById("user-nariz").textContent = "Nariz: " + nariz;
+    document.getElementById("user-queixo").textContent = "Furo no queixo: " + queixo;
+    document.getElementById("user-covinha").textContent = "Covinha: " + covinha;
+    document.getElementById("user-sangue").textContent = "Tipo sanguíneo: " + sangue;
+    // document.getElementById("overlay").style.display = "none";
+    // document.getElementById("user-details").style.display = "none";
+
+    
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closeDialog() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+function hideUserInfo() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("user-details").style.display = "none";
+}
+        function showCards() {
+           
+            var card1 = document.getElementById("card1");
+            var card2 = document.getElementById("card2");
+            var card3 = document.getElementById("card3");
+            var card4 = document.getElementById("card4");
+            var card5 = document.getElementById("card5");
+            card1.style.display = "block";
+            card2.style.display = "block";
+            card3.style.display = "block";
+            card4.style.display = "block";
+            card5.style.display = "block";
+          
+
+        }
+
+        /*function hideCards() {
+            var card1 = document.getElementById("card1");
+            var card2 = document.getElementById("card2");
+            card1.style.display = "none";
+            card2.style.display = "none";
+            card1.classList.remove("user-details");
+            card2.classList.remove("user-details");
+        }*/
+       
+    </script>
+     <script src="script2.js"></script>
+</body>
+</html>
